@@ -12,3 +12,14 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     depositInput.value = "";
 
 })
+document.getElementById('btn-withdraw').addEventListener('click', function () {
+    const withdrawInput = document.getElementById('withdraw-field');
+    const withdrawTotal = document.getElementById('withdraw-total');
+    const withdrawAmount = parseFloat(withdrawInput.value);
+    const prevoiusWithdrawTotal = parseFloat(withdrawTotal.innerText);
+    withdrawTotal.innerText = prevoiusWithdrawTotal + withdrawAmount;
+    const balanceTotal = document.getElementById('balance-total');
+    const prevoiusBalanceTotal = parseFloat(balanceTotal.innerText)
+    balanceTotal.innerText = prevoiusBalanceTotal - withdrawAmount;
+    withdrawInput.value = '';
+})
